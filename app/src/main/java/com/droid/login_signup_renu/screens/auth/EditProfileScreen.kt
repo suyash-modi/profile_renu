@@ -25,7 +25,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -50,7 +49,7 @@ fun EditProfileScreen(navController: NavController, viewModel: ProfileViewModel 
     var internshipDuration by remember { mutableStateOf(profileState.internshipDuration) }
     var profileImageUrl by remember { mutableStateOf(profileState.profileImageUrl) }
 
-    val availableDomains = listOf("UI/UX Design", "Software Development", "Data Science", "Digital Marketing", "Android Development Intern", "Mobile Application Developer Intern", "Junior Android Developer", "Kotlin Developer Intern", "Android UI/UX Designer Intern", "Front-End Developer Intern", "Full-Stack Web Developer Intern", "Back-End Developer Intern", "Web Application Developer Intern", "UI/UX Web Design Intern", "React Developer Intern", "JavaScript Developer Intern", "HTML/CSS Developer Intern", "Software Developer Intern", "Backend Engineer Intern", "Full-Stack Software Engineer Intern", "C++/Java Developer Intern", "System Engineer Intern", "Cloud Software Engineer Intern", "Data Scientist Intern", "Machine Learning Engineer Intern", "Data Analyst Intern", "Data Engineer Intern", "Artificial Intelligence Intern", "Business Intelligence Intern", "Statistical Modeling Intern", "Cybersecurity Analyst Intern", "Network Security Intern", "Ethical Hacker Intern", "Penetration Testing Intern", "Security Software Developer Intern", "Information Security Intern", "Cloud Engineer Intern", "Cloud Developer Intern", "Cloud Solutions Architect Intern", "Cloud Security Intern", "AWS/GCP/Azure Cloud Intern", "DevOps Engineer Intern", "Continuous Integration Intern", "Automation Engineer Intern", "Infrastructure Engineer Intern", "Site Reliability Engineer Intern", "UX/UI Designer Intern", "Interaction Designer Intern", "Product Designer Intern", "User Research Intern", "Visual Designer Intern", "User Interface Designer Intern", "Game Developer Intern", "Unity Developer Intern", "Unreal Engine Developer Intern", "3D Game Design Intern", "Game Testing Intern", "Blockchain Developer Intern", "Ethereum Developer Intern", "Solidity Developer Intern", "Cryptocurrency Intern", "Blockchain Research Intern", "AI Developer Intern", "AI Research Intern", "Natural Language Processing Intern", "Robotics Intern", "Deep Learning Intern", "Product Manager Intern", "Junior Product Owner Intern", "Technical Product Manager Intern", "Product Development Intern", "QA Engineer Intern", "Test Engineer Intern", "Automation Tester Intern", "Manual Testing Intern", "Performance Testing Intern")
+    val availableDomains = listOf("UI/UX Design", "Software Testing", "Android Development",  "Web Development", "Content Creation","Blogging","Photograpy","Video Editing","Modeling","Game Development","Marketing","Banking")
 
     val internshipData = List(6) { "${it + 1} (Months)" }
 
@@ -81,8 +80,8 @@ fun EditProfileScreen(navController: NavController, viewModel: ProfileViewModel 
                 timeInMillis = it
             }
             val today = Calendar.getInstance()
-            today.add(Calendar.YEAR, -16) // Subtract 16 years from today's date
-            return birthDate.before(today) // Check if birthdate is before 16 years ago
+            today.add(Calendar.YEAR, -16)
+            return birthDate.before(today)
         }
         return false
     }
@@ -118,15 +117,15 @@ fun EditProfileScreen(navController: NavController, viewModel: ProfileViewModel 
                 .background(Color(0xFF5F93FB))
                 .padding(8.dp)
                 .height(55.dp),
-            horizontalArrangement = Arrangement.SpaceBetween, // Ensure space between items
+            horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
                 text = "Edit Profile",
                 style = MaterialTheme.typography.titleLarge,
                 color = Color.White,
-                modifier = Modifier.weight(1f), // Make the Text take available space
-                textAlign = TextAlign.Center // Center the text
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.Center
             )
             IconButton(onClick = {
                 val updatedProfile = profileState.copy(
@@ -277,17 +276,17 @@ fun DropdownField(value: String, label: String, options: List<String>, onValueCh
                 .fillMaxWidth()
                 .clickable { expanded = true }
                 .padding(8.dp),
-            verticalAlignment = Alignment.CenterVertically // Align content vertically in the row
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = if (value.isEmpty()) label else value,
                 style = MaterialTheme.typography.bodyLarge,
-                modifier = Modifier.weight(1f).padding(16.dp) // Take up remaining space
+                modifier = Modifier.weight(1f).padding(16.dp)
             )
             Icon(
                 imageVector = Icons.Default.KeyboardArrowDown,
                 contentDescription = "More options",
-                modifier = Modifier.align(Alignment.CenterVertically) // Align icon vertically centered
+                modifier = Modifier.align(Alignment.CenterVertically)
             )
         }
         DropdownMenu(
