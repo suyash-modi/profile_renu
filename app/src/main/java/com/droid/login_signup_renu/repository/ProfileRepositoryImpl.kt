@@ -13,7 +13,12 @@ class ProfileRepositoryImpl : ProfileRepository {
             about = "Passionate about creating user-friendly designs.",
             skills = listOf("UI/UX Design", "Prototyping", "Wireframing"),
             education = "XYZ University\nComputer Science\n2021 - 2025",
-            profileImageUrl = ""
+            profileImageUrl = "",
+            contact = "7493654893",
+            email = "example@email.com",
+            dob = "23/11/2003",
+            domain = "Android Development Intern",
+            internshipDuration = "1 (Months)",
         )
     }
     //https://via.placeholder.com/150

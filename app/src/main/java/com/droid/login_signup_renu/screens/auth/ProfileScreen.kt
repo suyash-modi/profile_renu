@@ -299,7 +299,13 @@ fun ProfileScreenPreview() {
         education = "Bachelor's in Computer Science",
         isAboutEditable = false,
         isSkillsEditable = false,
-        isEducationEditable = false
+        isEducationEditable = false,
+        contact = "7493654893",
+        email = "example@email.com",
+        dob = "23/11/2003",
+        domain = "Android Development Intern",
+        internshipDuration = "1 (Months)",
+
     )
     ProfileScreenPreviewContent(profileState)
 }
